@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let storyboard = UIStoryboard(name: "Main", bundle: nil) // Ensure this matches your storyboard name
         let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
-
-        window.rootViewController = signInVC
+        let nav = UINavigationController(rootViewController: signInVC)
+        window.rootViewController = nav
         self.window = window
         window.makeKeyAndVisible()
     }

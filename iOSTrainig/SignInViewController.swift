@@ -12,6 +12,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var popUpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,5 +72,10 @@ class SignInViewController: UIViewController {
         present(signUpVC, animated: true) {
             print("✅ SignUpViewController Presented") // Debug log
         }
+    }
+    
+    @IBAction func didTapPopUpButton(_ sender: Any) {
+        let sampleVC = DashboardViewController()
+        self.navigationController?.pushViewController(sampleVC, animated: true)
     }
 }
