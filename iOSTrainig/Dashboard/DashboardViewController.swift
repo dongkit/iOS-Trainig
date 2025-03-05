@@ -13,14 +13,14 @@ class DashboardViewController: UIViewController {
     
     var teachers: [Teacher] = [
         Teacher(image: "native-camp", name: "Kit", flag: "🇵🇭", address: "Cordova"),
-        Teacher(image: "native-camp", name: "Axe", flag: "🇵🇭", address: "Cebu"),
-        Teacher(image: "native-camp", name: "Fizz", flag: "🇵🇭", address: "Mandaue"),
-        Teacher(image: "native-camp", name: "Akai", flag: "🇵🇭", address: "Lapu-lapu"),
-        Teacher(image: "native-camp", name: "Rylai", flag: "🇵🇭", address: "Naga"),
-        Teacher(image: "native-camp", name: "Leona", flag: "🇵🇭", address: "Consolacion"),
-        Teacher(image: "native-camp", name: "Selena", flag: "🇵🇭", address: "Catmon"),
-        Teacher(image: "native-camp", name: "Pudge", flag: "🇵🇭", address: "Talisay"),
-        Teacher(image: "native-camp", name: "Miya", flag: "🇵🇭", address: "Argao")
+        Teacher(image: "axe-1", name: "Axe", flag: "🇵🇭", address: "Cebu"),
+        Teacher(image: "fizz-1", name: "Fizz", flag: "🇵🇭", address: "Mandaue"),
+        Teacher(image: "akai-1", name: "Akai", flag: "🇵🇭", address: "Lapu-lapu"),
+        Teacher(image: "rylai-1", name: "Rylai", flag: "🇵🇭", address: "Naga"),
+        Teacher(image: "leona-1", name: "Leona", flag: "🇵🇭", address: "Consolacion"),
+        Teacher(image: "selena-1", name: "Selena", flag: "🇵🇭", address: "Catmon"),
+        Teacher(image: "pudge-1", name: "Pudge", flag: "🇵🇭", address: "Talisay"),
+        Teacher(image: "miya-1", name: "Miya", flag: "🇵🇭", address: "Argao")
     ]
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class DashboardViewController: UIViewController {
             action: #selector(didTapCloseButton)
         )
         self.navigationItem.rightBarButtonItem = barButtonItem
-        self.navigationItem.rightBarButtonItem?.tintColor = .systemBrown
+        self.navigationItem.rightBarButtonItem?.tintColor = .systemGray2
 //        self.navigationItem.hidesBackButton = true
     }
     @objc func didTapCloseButton() {
@@ -62,20 +62,20 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped row # \(indexPath.row)")
+        let teacher = teachers[indexPath.row]
+        
+        print("You tapped \(teacher.name)")
         
         tableView.deselectRow(at: indexPath, animated: true)
-
-        let teacher = teachers[indexPath.row]
-
-        // Load TeacherDetailsViewController from XIB
-        let teacherDetailsVC = TeacherDetailsViewController(nibName: "TeacherDetailsViewController", bundle: nil)
         
-        // Pass the selected teacher data
+        let teacherDetailsVC = TeacherDetailsViewController()
         teacherDetailsVC.teacher = teacher
-
-        // Push the details screen
         self.navigationController?.pushViewController(teacherDetailsVC, animated: true)
+        
+        
+        // collection view
+//        let photosVC = PhotosViewController()
+//        self.navigationController?.pushViewController(photosVC, animated: true)
     }
 
 }
