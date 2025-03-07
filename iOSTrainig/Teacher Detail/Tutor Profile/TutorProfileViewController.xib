@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TutorProfileViewController" customModule="iOSTrainig" customModuleProvider="target">
+            <connections>
+                <outlet property="teacherNameLabel" destination="yPs-CA-US2" id="CRo-2h-To9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Qc-0B-gcX">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutor's Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQp-Y4-Eie">
+                            <rect key="frame" x="10" y="10" width="116" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPs-CA-US2">
+                            <rect key="frame" x="10" y="50" width="45" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20t-zN-aLE">
+                            <rect key="frame" x="10" y="90.000000000000014" width="373" height="142.33333333333337"/>
+                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="yPs-CA-US2" firstAttribute="leading" secondItem="6Qc-0B-gcX" secondAttribute="leading" constant="10" id="277-Pu-IW7"/>
+                        <constraint firstItem="yPs-CA-US2" firstAttribute="top" secondItem="6Qc-0B-gcX" secondAttribute="top" constant="50" id="6ty-aM-1Y4"/>
+                        <constraint firstItem="EQp-Y4-Eie" firstAttribute="top" secondItem="6Qc-0B-gcX" secondAttribute="top" constant="10" id="7Jf-Oh-t9a"/>
+                        <constraint firstItem="20t-zN-aLE" firstAttribute="leading" secondItem="6Qc-0B-gcX" secondAttribute="leading" constant="10" id="7YI-MZ-AP9"/>
+                        <constraint firstItem="20t-zN-aLE" firstAttribute="top" secondItem="6Qc-0B-gcX" secondAttribute="top" constant="90" id="Frs-Vj-M4A"/>
+                        <constraint firstItem="EQp-Y4-Eie" firstAttribute="leading" secondItem="6Qc-0B-gcX" secondAttribute="leading" constant="10" id="KBO-ad-aqH"/>
+                        <constraint firstAttribute="trailing" secondItem="20t-zN-aLE" secondAttribute="trailing" constant="10" id="Tsc-vB-on8"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.96991270780000005" green="0.92067050930000005" blue="0.86356836560000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6Qc-0B-gcX" secondAttribute="trailing" id="0Gx-As-xLc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6Qc-0B-gcX" secondAttribute="bottom" id="BJ9-ma-v5v"/>
+                <constraint firstItem="6Qc-0B-gcX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Gey-ak-3gC"/>
+                <constraint firstItem="6Qc-0B-gcX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="a7P-Af-e5R"/>
+            </constraints>
+            <point key="canvasLocation" x="6.8702290076335872" y="20.422535211267608"/>
+        </view>
+    </objects>
+</document>

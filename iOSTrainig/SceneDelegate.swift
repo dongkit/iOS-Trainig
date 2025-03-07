@@ -14,13 +14,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        let window = UIWindow(windowScene: windowScene)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Ensure this matches your storyboard name
-        let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
-        let nav = UINavigationController(rootViewController: signInVC)
-        window.rootViewController = nav
-        self.window = window
+        
+        window = UIWindow(windowScene: windowScene)
+        
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            window?.rootViewController = MainTabBarController()
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as? SignInViewController {
+                window?.rootViewController = UINavigationController(rootViewController: signInVC)
+            }
+        }
+        
+        window?.makeKeyAndVisible()
+    }
+    
+    func changeRootViewController(_ viewController: UIViewController, animated: Bool = true) {
+        guard let window = self.window else { return }
+        
+        if animated {
+            let transition = CATransition()
+            transition.type = .fade
+            transition.duration = 0.3
+            window.layer.add(transition, forKey: kCATransition)
+        }
+        
+        window.rootViewController = viewController
         window.makeKeyAndVisible()
     }
 
@@ -51,7 +70,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
 
 }
 

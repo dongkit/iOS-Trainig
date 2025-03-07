@@ -12,4 +12,5 @@ struct Teacher: Codable {
     let name: String
     let flag: String
     let address: String
+    var isFavorite: Bool = false
 }
